@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Submission Form</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <p><label for="name">Name: <label>
+        <input type="text" name="name" id="name" v-model="name">
+       <p class="error">{{nameError}}</p>
+</p>
+
+  <p>
+    <label for="email">Email Address: <label>
+        <input type="text" name="email" id="email" v-model="email">
+        <p class="error">{{emailError}}</p>
+  </p>
+
+  <p>
+    <input type="submit" value="Submit" v-on:click="check">
+    <p>{{submit}}</p>
+  </p>
+</div>
+   
+<div id="spies">
+  <codenames v-for="cd in codenames" v-bind:name="cd.name" v-bind:code="cd.codename" ></codenames>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
